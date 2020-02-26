@@ -1,4 +1,4 @@
-package com.example.wiproassignmentproject
+package com.example.wiproassignmentproject.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wiproassignmentproject.R
 import com.example.wiproassignmentproject.adapter.DemoListAdapter
 import com.example.wiproassignmentproject.databinding.ActivityMainBinding
 import com.example.wiproassignmentproject.di.DaggerMyAppComponent
@@ -34,11 +35,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val  daggerMyAppComponent = DaggerMyAppComponent.builder().build()
         daggerMyAppComponent.inject(this)
-        mbinding =  DataBindingUtil.setContentView(this,R.layout.activity_main)
+        mbinding =  DataBindingUtil.setContentView(this,
+            R.layout.activity_main
+        )
         rvView = mbinding.mylistview
 
         viewModel = ViewModelProviders.of(this,mViewModelFactory).get(MainActivityViewModel::class.java)
-        if(Utils.isNetworkAvailable(this) ) {
+        if(Utils.isNetworkAvailable(this)) {
 
 
             // getting the data from server by viewmodel using repository

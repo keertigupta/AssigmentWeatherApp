@@ -1,6 +1,6 @@
 package com.example.wiproassignmentproject.di
 
-import com.example.wiproassignmentproject.MainActivity
+import com.example.wiproassignmentproject.view.MainActivity
 import dagger.Component
 
 

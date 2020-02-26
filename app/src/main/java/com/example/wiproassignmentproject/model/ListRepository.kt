@@ -14,6 +14,9 @@ class ListRepository @Inject constructor(){
     private val mutableLiveResponse: MutableLiveData<ResponseData> = MutableLiveData()
 
 
+    fun getData():String{
+        return "this is string"
+    }
      fun getMutableLiveData():MutableLiveData<ResponseData> {
          val apiRes: APIService = RetrofitInstance.service
          val call: Call<ResponseData> = apiRes.getList()
